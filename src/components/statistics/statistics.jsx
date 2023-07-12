@@ -1,7 +1,19 @@
+import styled from 'styled-components';
+
+const Title = styled.h2`
+    font-size: 25px;
+`;
+
+const StatisticList = styled.ul`
+list-style: none;
+`;
+
+
 export const Statistics = ( {good, neutral, bad, total, positivePercentage} ) => {
     return (
       <div>
-        <ul>
+        <Title>Statictics</Title>
+        <StatisticList>
             <li>
                 <p>Good: {good}</p>
             </li>
@@ -17,7 +29,7 @@ export const Statistics = ( {good, neutral, bad, total, positivePercentage} ) =>
             <li>
                 <p>Positive feedback: {positivePercentage}%</p>
             </li>
-        </ul>
+        </StatisticList>
       </div>  
     );
 };

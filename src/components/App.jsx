@@ -33,11 +33,11 @@ export class App extends Component {
   render() {
     const state = this.state;
     const conditionForRender = Object.values(state).every(value => value === 0);
-    
+    const options = Object.keys(state);
 
     return (
       <Section title="Please leave feedback">
-        <FeedbackOptions options={Object.keys(state)} onLeaveFeedback={this.onLeaveFeedback} />
+        <FeedbackOptions options={options} onLeaveFeedback={this.onLeaveFeedback} />
         {conditionForRender
         ? <Notification message="There is no feedback" />
         :<Statistics good={state.good} neutral={state.neutral} bad={state.bad} total={this.handlerTotalSum()} positivePercentage={this.handlerGetPercentage()} />}
