@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 const SectionContainer = styled.section`
     max-width: 500px;
@@ -12,4 +13,9 @@ export const Section = ({ title, children }) => {
             {children}
         </SectionContainer>
     )
-}
+};
+
+Section.propTypes = {
+    title: PropTypes.string.isRequired,
+    children: PropTypes.node.isRequired,
+};
